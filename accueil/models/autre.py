@@ -54,7 +54,8 @@ def date_moins_date(date1,date2):
 
 
 class Creneau(models.Model):
-    LISTE_HEURE=[(i,"{}h{:02d}".format(i//60,(i%60))) for i in range(HEURE_DEBUT,HEURE_FIN,INTERVALLE)] 
+    LISTE_MINUTE=[480, 540, 610, 670, 730, 800, 860, 930, 990, 1050]
+    LISTE_HEURE=[(i,"{}h{:02d}".format(i//60,(i%60))) for i in LISTE_MINUTE] 
         # une heure est représentée par le nombre de minutes depuis
         # minuit
     LISTE_JOUR=enumerate(["lundi","mardi","mercredi","jeudi","vendredi","samedi"])

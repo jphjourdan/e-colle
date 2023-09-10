@@ -162,7 +162,8 @@ class NoteManager(models.Manager):
 
 class Note(models.Model):
     LISTE_JOUR=enumerate(["lundi","mardi","mercredi","jeudi","vendredi","samedi"])
-    LISTE_HEURE=[(i,"{}h{:02d}".format(i//60,(i%60))) for i in range(HEURE_DEBUT,HEURE_FIN,INTERVALLE)] 
+    LISTE_MINUTE=[480, 540, 610, 670, 730, 800, 860, 930, 990, 1050]
+    LISTE_HEURE=[(i,"{}h{:02d}".format(i//60,(i%60))) for i in LISTE_MINUTE] 
     LISTE_NOTE=[(21,"n.n"),(22,"Abs")]
     LISTE_NOTE.extend(zip(range(21),range(21)))
     colleur = models.ForeignKey("Colleur",on_delete=models.PROTECT, null = True)
